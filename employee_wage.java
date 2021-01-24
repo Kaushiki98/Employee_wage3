@@ -1,10 +1,8 @@
 public class employee_wage{
 
 	static final int is_Full_Time = 1;
-	static final int is_Part_Time = 2;
 	static final int emp_wage_per_hour = 20;
-	static final int no_of_hours = 8;
-	static final int no_of_part_time_hours = 4;
+	static final int no_of_hours = 100;
 	static final int days = 20;
 
 	private void doCalculation()
@@ -13,18 +11,13 @@ public class employee_wage{
 
 		int emp_attendance = (int)(Math.floor(Math.random()*10) % 2);
 
-		switch (emp_attendance) {
-
-		case 0:
+		if(emp_attendance == is_Full_Time){
 			System.out.println("Employee is present ");
-			int Payment = emp_wage_per_hour * no_of_hours;
-			System.out.println("Payment is: "+ Payment);
-			break;
-		case 1:
-			System.out.println("Employee is part time");
-			int Payments = emp_wage_per_hour * no_of_part_time_hours;
-			System.out.println("Part time Payment is: "+ Payments);
-			break;
+			int Payment = emp_wage_per_hour * no_of_hours * days;
+			System.out.println("Full time Payment for one month is: "+ Payment);
+		}
+		else{
+			System.out.println(" Employee is abscent ");
 		}
 	}
 

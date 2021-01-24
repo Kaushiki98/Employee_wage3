@@ -5,12 +5,13 @@ public class employee_wage{
 	static final int emp_wage_per_hour = 20;
 	static final int no_of_hours = 8;
 	static final int no_of_part_time_hours = 4;
+	static final int days = 20;
 
 	private void doCalculation()
 	{
 		System.out.println(" Welcome to employee wage calculation ");
 
-		int emp_attendance = (int)(Math.floor(Math.random()*10) % 3);
+		int emp_attendance = (int)(Math.floor(Math.random()*10) % 2);
 
 		switch (emp_attendance) {
 
@@ -24,11 +25,6 @@ public class employee_wage{
 			int Payments = emp_wage_per_hour * no_of_part_time_hours;
 			System.out.println("Part time Payment is: "+ Payments);
 			break;
-		case 2:
-			System.out.println("Employee is Abscent");
-			System.out.println("Payment is 0");
-			break;
-
 		}
 	}
 

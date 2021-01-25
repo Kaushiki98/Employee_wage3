@@ -1,28 +1,31 @@
 public class employee_wage{
 
-	static final int is_Full_Time = 1;
-	static final int emp_wage_per_hour = 20;
-	static final int no_of_hours = 100;
-	static final int days = 20;
+	public static final int is_Full_Time = 1;
+	public static final int is_Part_Time = 2;
 
-	private void doCalculation()
+	public void calEmpWage(int EmpWage, int NumOfDays , int maxHrs)
 	{
-		System.out.println(" Welcome to employee wage calculation ");
 
-		int emp_attendance = (int)(Math.floor(Math.random()*10) % 2);
+		int empCheck = (int) (Math.floor(Math.random() * 10) % 2);
 
-		if(emp_attendance == is_Full_Time){
-			System.out.println("Employee is present ");
-			int Payment = emp_wage_per_hour * no_of_hours * days;
-			System.out.println("Full time Payment for one month is: "+ Payment);
+		if(empCheck == is_Full_Time){
+			System.out.println("Employee is Full time ");
+			int Payment = EmpWage * maxHrs * NumOfDays;
+			System.out.println("Full time Payment for one month: "+ Payment);
+		}
+
+		else if(empCheck == is_Part_Time){
+			System.out.println("Employee is part timr: ");
+         int Payment = EmpWage * maxHrs * NumOfDays;
+         System.out.println("Full time Payment for one month: "+ Payment);
 		}
 		else{
-			System.out.println(" Employee is abscent ");
+			System.out.println("Employee is Abscent");
 		}
 	}
 
 	public static void main(String[] args){
-		employee_wage Emp = new employee_wage();
-		Emp.doCalculation();
+		employee_wage company = new employee_wage ();
+		company.calEmpWage(80,2,8);
 	}
 }
